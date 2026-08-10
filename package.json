@@ -1,0 +1,18 @@
+{
+  "name": "mano-world",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mano's Imaginary World — a fictional planet, grown slowly.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
