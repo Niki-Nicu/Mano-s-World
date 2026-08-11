@@ -39,7 +39,7 @@ export function createOrbitControls(canvas) {
     const dy = e.clientY - lastY;
     lastX = e.clientX;
     lastY = e.clientY;
-    state.targetTheta -= dx * ORBIT.dragSensitivity;
+    state.targetTheta += dx * ORBIT.dragSensitivity;
     state.targetPhi -= dy * ORBIT.dragSensitivity;
     state.targetPhi = clampPhi(state.targetPhi);
   });
@@ -76,7 +76,7 @@ export function createOrbitControls(canvas) {
         const dy = e.touches[0].clientY - lastY;
         lastX = e.touches[0].clientX;
         lastY = e.touches[0].clientY;
-        state.targetTheta -= dx * ORBIT.dragSensitivity;
+        state.targetTheta += dx * ORBIT.dragSensitivity;
         state.targetPhi -= dy * ORBIT.dragSensitivity;
         state.targetPhi = clampPhi(state.targetPhi);
       } else if (e.touches.length === 2) {

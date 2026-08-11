@@ -38,19 +38,19 @@ function addTrees(group, size, treeCount) {
     const r = Math.random() * size * 0.5;
     const tx = Math.cos(angle) * r;
     const tz = Math.sin(angle) * r;
-    const treeHeight = size * (0.22 + Math.random() * 0.16);
+    const treeHeight = size * (0.035 + Math.random() * 0.02);
 
     const trunk = new THREE.Mesh(
       new THREE.CylinderGeometry(treeHeight * 0.05, treeHeight * 0.07, treeHeight * 0.35, 5),
       new THREE.MeshPhongMaterial({ color: TRUNK_COLOR })
     );
-    trunk.position.set(tx, size * 0.14 + treeHeight * 0.17, tz);
+    trunk.position.set(tx, size * 0.045 + treeHeight * 0.17, tz);
 
     const foliage = new THREE.Mesh(
       new THREE.ConeGeometry(treeHeight * 0.32, treeHeight * 0.7, 6),
       new THREE.MeshPhongMaterial({ color: FOREST_COLOR })
     );
-    foliage.position.set(tx, size * 0.14 + treeHeight * 0.55, tz);
+    foliage.position.set(tx, size * 0.045 + treeHeight * 0.55, tz);
 
     group.add(trunk, foliage);
   }
@@ -69,23 +69,23 @@ function buildIslandGroup({ lat, lon, size, forest, mainIsland }) {
   group.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
 
   const baseGeometry = new THREE.IcosahedronGeometry(size, 1);
-  baseGeometry.scale(1, 0.16, 1);
-  jitter(baseGeometry, size * 0.12);
+  baseGeometry.scale(1, 0.04, 1);
+  jitter(baseGeometry, size * 0.06);
   const base = new THREE.Mesh(
     baseGeometry,
     new THREE.MeshPhongMaterial({ color: SAND_COLOR, shininess: 4 })
   );
-  base.position.y = size * 0.05;
+  base.position.y = size * 0.015;
   group.add(base);
 
   const coreGeometry = new THREE.IcosahedronGeometry(size * 0.68, 1);
-  coreGeometry.scale(1, 0.22, 1);
-  jitter(coreGeometry, size * 0.08);
+  coreGeometry.scale(1, 0.05, 1);
+  jitter(coreGeometry, size * 0.04);
   const core = new THREE.Mesh(
     coreGeometry,
     new THREE.MeshPhongMaterial({ color: GRASS_COLOR, shininess: 2 })
   );
-  core.position.y = size * 0.12;
+  core.position.y = size * 0.03;
   group.add(core);
 
   if (forest) {

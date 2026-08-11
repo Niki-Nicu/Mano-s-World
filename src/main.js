@@ -34,6 +34,13 @@ function animate() {
     planet.rotation.y = idleRotation;
   }
 
+  if (planet.userData.cloudsMesh) {
+    planet.userData.cloudsMesh.rotation.y += IDLE_ROTATION_SPEED * 0.35;
+    if (planet.userData.cloudShadowMesh) {
+      planet.userData.cloudShadowMesh.rotation.y = planet.userData.cloudsMesh.rotation.y;
+    }
+  }
+
   render();
 }
 

@@ -9,9 +9,9 @@
 // mainIsland: slightly denser tree placement + treated as the "primary" island
 
 export const islandData = [
-  { lat: 8, lon: 30, size: 0.62, forest: true, mainIsland: true },
-  { lat: 22, lon: 55, size: 0.16, forest: true, mainIsland: false },
-  { lat: -10, lon: 10, size: 0.12, forest: false, mainIsland: false },
-  { lat: 3, lon: -20, size: 0.1, forest: true, mainIsland: false },
-  { lat: -25, lon: 60, size: 0.14, forest: false, mainIsland: false },
+  { lat: 8, lon: 30, size: 0.28, forest: true, mainIsland: true },
+  { lat: 22, lon: 55, size: 0.10, forest: true, mainIsland: false },
+  { lat: -10, lon: 10, size: 0.07, forest: false, mainIsland: false },
+  { lat: 3, lon: -20, size: 0.06, forest: true, mainIsland: false },
+  { lat: -25, lon: 60, size: 0.08, forest: false, mainIsland: false },
 ];
